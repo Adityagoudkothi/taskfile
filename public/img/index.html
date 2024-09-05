@@ -1,0 +1,1014 @@
+<html>
+    <head>
+        <title>PHP</title>
+        <meta charset="utf-8">
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+        
+            body {
+              font-family: "Poppins";
+              color: #2d2d2d;
+            }
+            .align-items-center{
+              align-items: center;
+            }
+        
+            .mt-0 {
+              margin-top: 0px;
+            }
+        
+            .p-7 {
+              padding-top: 7px;
+              padding-bottom: 7px;
+            }
+        
+            .table>thead>tr>th {
+              vertical-align: bottom;
+              border-bottom: 1px solid #000;
+              border-top: 1px solid #000;
+              font-weight: 600;
+              font-size: 14px;
+              white-space: nowrap;
+              padding: 0px 7px 0px 7px;
+              background-color: #fff;
+            }
+        
+            .ps_relative {
+              position: relative;
+              bottom: 15px;
+            }
+        
+            .mt60 {
+              margin-top: 25px;
+            }
+        
+            .mt65 {
+              margin-top: 65px;
+            }
+        
+            .pad1 {
+              padding: 5px 20px 5px 20px;
+            }
+        
+            .pad2 {
+              padding: 17px 5px 17px 20px;
+              background-color: #fff;
+            }
+            .w100{
+                width:100%;
+            }
+        
+            .pad-3 {
+              padding: 17px 5px 0px 10px;
+            }
+        
+            .f-600 {
+              font-weight: 600;
+            }
+        
+            .mb-0 {
+              margin-bottom: 0px;
+            }
+        
+            .imghwdth {
+              margin-right: 25px;
+              margin-top: 10px;
+              width: max-content;
+              height: 95px;
+            }
+        
+            .imgwdth1 {
+              width: 63px;
+              height: 70px;
+            }
+        
+            .bg1 {
+              background: #f0f0f0;
+            }
+        
+            .column1 {
+              float: left;
+              width: 20%;
+            }
+        
+            .text-right {
+              text-align: right;
+            }
+        
+            .headingfont {
+              text-align: left;
+            }
+        
+            .column2 {
+              float: right;
+              width: 80%;
+              background-color: #11a99a;
+              color: #fff;
+              padding: 16px 16px 16px 25px;
+            }
+        
+            .column3 {
+              float: left;
+              width: 50%;
+              text-align: initial;
+              border: none !important;
+            }
+            .column10 {
+              float: left;
+              width: 150px;
+              height: 136px;
+              text-align: initial;
+              border: none !important;
+            }
+            .column11 {
+            text-align: left;
+            float: left;
+            width: calc(100% - 150px);
+            padding: 15px;
+            border: none !important;
+            }
+        
+            .column4 {
+              text-align: right;
+              float: right;
+              width: 50%;
+              border: none !important;
+            }
+        
+            .column5 {
+              float: left;
+              width: 25%;
+              border-right: 1px solid #898989;
+            }
+        
+            .column6 {
+              float: right;
+              width: 70%;
+            }
+            .column7 {
+              float: left;
+              width: 20%;
+            }
+        
+            .pl_18 {
+              padding-left: 18px;
+              margin-top: 5px;
+            }
+            img{
+            border: none !important;    
+            }
+        
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+              border: none !important;
+            }
+        
+            .f13 {
+              font-size: 13px;
+            }
+        
+            .f14 {
+              font-size: 14px;
+              line-height: 22px;
+            }
+        
+            .siteclr {
+              color: #898989;
+            }
+        
+            .siteclr2 {
+              color: #212121;
+            }
+        
+            .mt-2 {
+              margin-top: 10px;
+            }
+        
+            .bdr1 {
+              border-bottom: 1px solid #898989;
+              background-color: #fff;
+            }
+        
+            .bdr2 {
+              border-top: 6px solid #11a99a;
+                /* #0b889d; */
+            }
+        
+            .bg2 {
+              background-color: #f0f8ffd9;
+            }
+        
+            .siteclr3 {
+              color: #0b889d;
+            }
+        
+            .text-center {
+              text-align: center;
+            }
+        
+            #id1 tbody tr:nth-child(odd) {
+              background-color: #f0f0f0;
+            }
+        
+            .border_spacing {
+              border-spacing: 0px;
+            }
+        
+            .minhtheader {
+              min-height: 5cm;
+            }
+        .d-flex{
+          display: flex;
+        }
+            .minhtfooter {
+              min-height: 2cm;
+            }
+        
+            /* new header1 */
+            .clr {
+              color: #F00303;
+            }
+        
+            .clr2 {
+              color: #0b733e;
+            }
+        
+            .clr3 {
+              color: #6c7b89;
+              font-weight: 300;
+            }
+        
+            table.report-container {
+              page-break-after: always
+            }
+        
+            .thead.report-header {
+              display: table-header-group;
+              min-height: 5cm;
+            }
+        
+            .tfoot.report-footer {
+              display: table-footer-group;
+              position: fixed;
+              bottom: 0;
+              min-height: 2cm;
+            }
+        
+            .report-content-cell {
+              background-color: #fff;
+            }
+        
+            .report-footer-cell {
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+              min-height: 2cm;
+            }
+        
+            .report-header-cell {
+              position: fixed;
+              top: 0;
+              width: 100%;
+              min-height: 5cm;
+            }
+        
+            .report-content {
+              margin-bottom: 10px;
+            }
+        
+            .ml17 {
+              margin-left: 17px;
+            }
+            .pt20{
+                padding-top:20px;
+            }
+        
+            /* @media print {
+          header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 5cm;
+            background-color: lightgray;
+          }
+        
+          footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            min-height: 2cm;
+            background-color: lightgray;
+          }
+        } */
+        
+            /* new css header2 */
+        
+        
+            .page-header,
+            .page-header-space {
+                /* min-height: 207.874px; */
+                 min-height: px;
+                font-size: 15px;
+               
+        
+        
+            }
+        
+        
+        
+            .page-footer {
+        /*
+              position: fixed;
+              bottom: 0;
+        */
+              width: 100%;
+              background: #fff;
+              /* for demo */
+              margin-top: 5px;
+            }
+            #div1 td{
+                padding:13px 8px;
+                text-align:center;
+                font-size:14px!important;
+                font-weight:400;
+            }
+            .pad12{
+                padding:13px 16px 13px 4px;
+            }
+            #div1 td{
+                max-width:32%;
+            }
+        
+            .page-header {
+        /*
+              position: fixed;
+              top: 0mm;
+        */
+              width: 100%;
+              background-color: #fff;
+            }
+        
+            @page {
+              margin-left: 0.5cm;
+              margin-right: 0.5cm;
+              margin-top: 0.2cm;
+              margin-bottom: 0.1cm;
+        }
+        
+            @media print {
+        
+              .breakpage { 
+            page-break-before: always;
+          }
+              thead {
+                display: table-header-group;
+                margin-top:1.2cm;
+              }
+        
+              tfoot {
+                display: table-footer-group;
+                margin-top: 5px;
+                margin-bottom:1.2cm;
+              }
+        
+              button {
+                display: none;
+              }
+        
+            }
+        
+            @media print {
+              tr td {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+              }
+            }
+            
+            .page-header p {
+               
+                margin-top:5px;
+            }
+            .page-header,
+            .page-header-space #title1 {
+                
+            }
+            .page-footer,
+            .page-footer-space {
+                min-height: 95px;
+                
+        
+            }
+            .page-footer,
+            .page-footer-space #title2 {
+                
+            }
+        
+        .page-footer #div2{
+                text-align: center;
+            }
+            .page-header #div1{
+                background-color: #9b9b9b;
+                
+            }
+            .page-footer p {
+              
+                
+            }
+        </style>
+    </head>
+    <body>
+        <table class="wrapper " style="width:1024px;">
+            <!--
+            <thead>
+                <tr>
+                    <td>
+                        <div class="page-header-space"></div>
+                    </td>
+                </tr>
+                
+            </thead>
+-->
+            <thead style="display: table-header-group;">
+                <tr style="">
+                    <td>
+                        <div class="page-header" style="
+    min-height: 140px;
+    background-color: #9b9b9b;
+">
+                            <div class="row pad1" id="div1" style="/* min-height: 140px; */">
+                                <p>
+                                    <span style="color: rgb(45, 194, 107);">
+                                        <strong>
+                                            <span style="font-size: 18pt;">ravi clinic</span>
+                                        </strong>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span style="color: rgb(45, 194, 107);">
+                                        <strong>
+                                            <span style="font-size: 18pt;">ravi clinic</span>
+                                        </strong>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span style="color: rgb(45, 194, 107);">
+                                        <strong>
+                                            <span style="font-size: 18pt;">ravi clinic</span>
+                                        </strong>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span style="color: rgb(45, 194, 107);">
+                                        <strong>
+                                            <span style="font-size: 18pt;">ravi clinic</span>
+                                        </strong>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </thead>
+            <!-- <tbody style="padding-top: 50px;padding-bottom: 50px;margin-top: 50px;margin-bottom: 50px;height:200px"> -->
+            <tbody>
+                <tr>
+                    <td>
+                        <!--*** CONTENT GOES HERE ***-->
+                        <div class="page" style="line-height: 3;">
+                            <div class="row bg1 pad1">
+                                <div class="column3">
+                                    <div class="f14">
+                                        <span>Patient Name</span>
+                                        :
+                                        <span class="f-600"> srinivas, Male  34 years, 0 months, 24 days</span>
+                                    </div>
+                                    <div class="f14">
+                                        <span>Appointment ID</span>
+                                        :
+                                        <span class="f-600"> OPD01127077</span>
+                                    </div>
+                                    <div class="f14">
+                                        <span>Contact number</span>
+                                        :
+                                        <span class="f-600"> +8347833348</span>
+                                    </div>
+                                </div>
+                                <div class="column4">
+                                    <div class="f14">
+                                        <span>Date</span>
+                                        :
+                                        <span class="f-600">
+                                            01-12-2023 &amp;
+                                    15:39 - 15:54
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="row bdr1">
+                            <div class=" pad2">
+                                <div class="f-600 f14">Vital Signs</div>
+                                <div class="row ">
+                                    <div class="column7">
+                                        <div class="siteclr f13">Body Temperature</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            100
+                                            <span>℉</span>
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Pulse rate</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            77
+                                        bpm
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Systolic blood pressure</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            120
+                                        mmHg
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Diastolic blood pressure</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            80
+                                        mmHg
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Spo2</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            99
+                                        %
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Random Blood Sugar</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            103
+                                        mg/dL
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Body height</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            158
+                                        cm
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Body weight</div>
+                                        <div class="siteclr f13 siteclr2">
+                                            56
+                                        kg
+                                        </div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">LMP</div>
+                                        <div class="siteclr f13 siteclr2"></div>
+                                    </div>
+                                    <!-- <div class="column7">
+                                        <div class="siteclr f13">Blood pressure</div>
+                                        <div class="siteclr f13 siteclr2">168 / 98 mmHg</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Pulse rate</div>
+                                        <div class="siteclr f13 siteclr2">90 bpm</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Respiration</div>
+                                        <div class="siteclr f13 siteclr2">20 bpm</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">o2 saturation</div>
+                                        <div class="siteclr f13 siteclr2">97%</div>
+                                    </div> -->
+                                </div>
+                                <!-- <div class="row mt-2">
+                                    <div class="column7">
+                                        <div class="siteclr f13">Random Blood Sugar</div>
+                                        <div class="siteclr f13 siteclr2">87mg/dl</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">
+                                            Body height
+                                        </div>
+                                        <div class="siteclr f13 siteclr2">45cm</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Body weight</div>
+                                        <div class="siteclr f13 siteclr2">68 kgs</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">LMP</div>
+                                        <div class="siteclr f13 siteclr2">40 bpm</div>
+                                    </div>
+                                    <div class="column7">
+                                        <div class="siteclr f13">Systolic Pressure</div>
+                                        <div class="siteclr f13 siteclr2">120</div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="pad-3">
+                                <div>
+                                    <h5 class="f-600 mb-0 mt-0">Symtoms</h5>
+                                    <ul class="pl_18">
+                                        <li class="siteclr2 f14">Fever(1480803010)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="f-600 mb-0">Differential Diagnosis</h5>
+                                    <ul class="pl_18">
+                                        <!-- <li class="siteclr2 f14">
+                                            Chest pain with features of angina pectoris
+                                        </li> -->
+                                        <li class="siteclr2 f14">
+                                            Typhoid fever(9059014)
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div>
+                                    <h5 class="f-600 mb-0">Differential Diagnosis</h5>
+                                    <ul class="pl_18 ">
+                                        <li class="siteclr2 f14">
+                                            Epigastric discomfort, NSAID use with a history of peptic ulcer disease.
+                                        </li>
+                                        <li class="siteclr2 f14">Lumbo-sacral back pain</li>
+                                        <li class="siteclr2 f14">Fibrocystic breast disease</li>
+                                    </ul>
+                                </div> -->
+                                <!-- <div>
+                                    <h5 class="f-600 mb-0">Differential Diagnosis</h5>
+                                    <ul class="pl_18 ">
+                                        <li class="siteclr2 f14">
+                                            Epigastric discomfort, NSAID use with a history of peptic ulcer disease.
+                                        </li>
+                                        <li class="siteclr2 f14">Lumbo-sacral back pain</li>
+                                        <li class="siteclr2 f14">Fibrocystic breast disease</li>
+                                    </ul>
+                                </div> -->
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <div class="pad2">
+                            <div class="f14 f-600">History Of Present Illness</div>
+                            <p class="siteclr2 f13">
+                                This is the first admission for this 56 year old woman, who states she
+                was in her usual state of good health until one week prior to
+                admission. At that time she noticed the abrupt onset (over a few
+                seconds to a minute) of chest pain which she describes as dull and
+                aching in character. The pain began in the left parasternal area and
+                radiated up to her neck. The first episode of pain one week ago
+                occurred when she was working in her garden in the middle of the. She
+                states she had been working for approximately 45 minutes and began to
+                feel tired before the onset of the pain. Her discomfort was
+                accompanied by shortness of breath, but no sweating, nausea, or
+                vomiting. The pain lasted approximately 5 to 10 minutes and resolved
+                when she went inside and rested in a cool area.
+                            </p>
+                        </div>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td class="pt20">
+                        <h5 class="f-600 mb-0">Immunisation history</h5>
+                        <table class="table bdr1 border_spacing " id="id1" style="width: 100%">
+                            <thead class="p-2">
+                                <tr class="trstyle">
+                                    <th class="headingfont">Vaccine</th>
+                                    <th class="headingfont">Status</th>
+                                    <th class="headingfont">Body site</th>
+                                    <th class="headingfont">Dosage</th>
+                                    <th class="headingfont">Brand</th>
+                                    <th class="headingfont">Route</th>
+                                    <th class="headingfont">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border1">
+                                <tr class="trfont">
+                                    <td class="f14 f-600 p-7">1. COVID-19 vaccine(4554086017)</td>
+                                    <td class="f14 p-7">yes</td>
+                                    <td class="f14 p-7">Right arm</td>
+                                    <td class="f14 p-7">first dose</td>
+                                    <td class="f14 p-7">covaxin</td>
+                                    <td>
+                                        IM
+                                    </td>
+                                    <td class="f14 p-7">09-02-2023</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt20">
+                        <h5 class="f-600 mb-0">Family Medical History</h5>
+                        No Data Available
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt20">
+                        <h5 class="f-600 mb-0">Past Medical History</h5>
+                        <table class="table bdr1 border_spacing " id="id1" style="width: 100%">
+                            <thead class="p-2">
+                                <tr class="trstyle">
+                                    <th class="headingfont">Complaint</th>
+                                    <th class="headingfont">Status</th>
+                                    <th class="headingfont">Present Since</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border1">
+                                <tr class="trfont">
+                                    <td class="f14 f-600 p-7">1. Thyroiditis(136211012)</td>
+                                    <td class="f14 p-7">present</td>
+                                    <td class="f14 p-7">2                                        Years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt20">
+                        <h5 class="f-600 mb-0"> Medical History</h5>
+                        <table class="table bdr1 border_spacing " id="id1" style="width: 100%">
+                            <thead class="p-2">
+                                <tr class="trstyle">
+                                    <th class="headingfont">Medicine</th>
+                                    <th class="headingfont">Dose</th>
+                                    <th class="headingfont">Frequency</th>
+                                    <th class="headingfont">Route</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border1">
+                                <tr class="trfont">
+                                    <td class="f14 f-600 p-7">
+                                        1.
+                                        Junior Lanzol 15mg Tablet DT
+                                    </td>
+                                    <td class="f14 p-7">1 tablet</td>
+                                    <td class="f14 p-7">1--1--1 (after meals )</td>
+                                    <td class="f14 p-7">Oral</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Allergies</h5>
+                        <ul class="pl_18">
+                            <li class="siteclr2 f14">
+                                Dust(55097015)
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Habits</h5>
+                        <ul class="pl_18">
+                            <li class="siteclr2 f14">Poor Sleep(301345002)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Surgical History</h5>
+                        <ul class="pl_18">
+                            <li class="siteclr2 f14">No Data Available</li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Medications</h5>
+                        <ul class="pl_18">
+                                                
+                                        
+                                    <li class="siteclr2 f14">Dolo 250 Oral Suspension | 1 tablet  | 1--0--1 | after food | 10                                    </li>
+                                                            
+                            
+                        
+                            
+                        </ul>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td class="pt20">
+                        <h5 class="f-600 mb-0"> Medications</h5>
+                        <table class="table bdr1 border_spacing " id="id1" style="width: 100%">
+                            <thead class="p-2">
+                                <tr class="trstyle">
+                                    <th class="headingfont">Medicine</th>
+                                    <th class="headingfont">Dose</th>
+                                    <th class="headingfont">Frequency</th>
+                                    <th class="headingfont">Route</th>
+                                    <th class="headingfont">Quantity</th>
+                                    <th class="headingfont">Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border1">
+                                <tr class="trfont">
+                                    <td class="f14 f-600 p-7">
+                                        1.
+                                        Dolo 250 Oral Suspension
+                                    </td>
+                                    <td class="f14 p-7">1 tablet</td>
+                                    <td class="f14 p-7">1--0--1</td>
+                                    <td class="f14 p-7">Oral</td>
+                                    <td class="f14 p-7">10</td>
+                                    <td class="f14 p-7">after food</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Musculoskeletal</h5>
+                        <ul class="pl_18">
+                            <li class="siteclr2 f14">
+                                She complains of lower back pain, aching in quality, approximately
+                    once every week after working in her garden. This pain is usually
+                    relieved with Tylenol. She complains of no other arthralgias,
+                    muscle aches, or pains.She complains of no other arthralgias,
+                    muscle aches, or pains.
+                            </li>
+                        </ul>
+                    </td>
+                </tr> -->
+                <!-- <tr>
+                    <td>
+                        <h5 class="f-600 mb-0">Neurological</h5>
+                        <ul class="pl_18">
+                            <li class="siteclr2 f14">
+                                She complains of no weakness, numbness, or incoordination.
+                            </li>
+                        </ul>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td>
+                        <div class="row bg1 pad1">
+                            <div>
+                                <h5 class="f-600 mb-0 mt-2">Investigations</h5>
+                                <ul class="pl_18 mb-0">
+                                    <li class="siteclr2 f14">
+                                        Clotting Time (CT)(52789-5 )
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <div>
+                            <h5 class="f-600 mb-0">Final Diagnosis</h5>
+                            <ul class="pl_18">
+                                <li class="siteclr2 f14">
+                                    Chest pain with features of angina pectoris
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr> -->
+                <!-- <tr>
+                    <td>
+                        <table class="table bdr1 border_spacing " id="id1" style="width: 100%">
+                            <thead class="p-2">
+                                <tr class="trstyle">
+                                    <th class="headingfont">Medicine</th>
+                                    <th class="headingfont">Frequency</th>
+                                    <th class="headingfont">Timings</th>
+                                    <th class="headingfont">Duration</th>
+                                    <th class="headingfont">Start From</th>
+                                </tr>
+                            </thead>
+                            <tbody class="border1">
+                                <tr class="trfont">
+                                    <td class="f14 f-600 p-7">1. CARIPAPA TABLET</td>
+                                    <td class="f14 p-7">1-0-1</td>
+                                    <td class="f14 p-7">After meals</td>
+                                    <td class="f14 p-7">7 Days</td>
+                                    <td class="f14 p-7">From day 1</td>
+                                </tr>
+                                <tr class="trfont">
+                                    <td class="f14 f-600">
+                                        2. VITAMIN C PLUS NEW SUGAR FREE ORANGE FLAVOUR Chewable Tablet
+                                    </td>
+                                    <td class="f14 p-7">1-0-1</td>
+                                    <td class="f14 p-7">After meals</td>
+                                    <td class="f14 p-7">7 Days</td>
+                                    <td class="f14 p-7">From day 1</td>
+                                </tr>
+                                <tr class="trfont">
+                                    <td class="f14 f-600">
+                                        3. PARACETAMOL(ABBOTT) 650mg Tablet FLAVOUR Chewable Tablet
+                                    </td>
+                                    <td class="f14 p-7">1-0-1</td>
+                                    <td class="f14 p-7">After meals</td>
+                                    <td class="f14 p-7">7 Days</td>
+                                    <td class="f14 p-7">From day 1</td>
+                                </tr>
+                                <tr class="trfont">
+                                    <td class="f14 f-600">
+                                        4. PARACETAMOL(ABBOTT) 650mg Tablet FLAVOUR Chewable Tablet
+                                    </td>
+                                    <td class="f14 p-7">1-0-1</td>
+                                    <td class="f14 p-7">After meals</td>
+                                    <td class="f14 p-7">7 Days</td>
+                                    <td class="f14 p-7">From day 1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr> -->
+                <tr>
+                    <td>
+                        <div class="row bg2 pad1 ">
+                            <div class="ps_relative">
+                                <h5 class="f-600 mb-0">Note:</h5>
+                                <div class="f14">No.</div>
+                                <h5 class="f-600 mb-0">Advice:</h5>
+                                <div class="f14">No.</div>
+                                <h5 class="f-600 mb-0">Cheif complaints:</h5>
+                                <div class="f14">.</div>
+                                <h5 class="f-600 mb-0">Refer doctor Details:</h5>
+                                <div class="f14">Doctor: dr. sushma</div>
+                                <div class="f14">Department: endocrinology</div>
+                                <div class="f14">Mobile: 9999888877</div>
+                                <div class="f14">notes: patient has a history of thyroid</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center mt-2" style="background-color: #fff;">
+                            <div class="column3">
+                                <img src="http://chart.apis.google.com/chart?cht=qr&amp;chs=140x140&amp;chld=L|0&amp;chl=" alt="" style="height: 80px;width:68px;">
+                            </div>
+                            <div class="column4">
+                                <!-- Dr. -->
+                                Gayathri
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <!-- table footer to be repeated on each PDF page -->
+            <tfoot style="display: table-footer-group">
+                <tr>
+                    <td>
+                        <div class="page-footer">
+                            <div id="div2">
+                                <div class="mt-2">
+                                    <div class="mt-2 bdr2"></div>
+                                    <div>
+                                        <div class="siteclr2 f14 mt-1">
+                                            <p style="text-align: center;">
+                                                <span style="color: rgb(22, 145, 121); font-size: 14pt;">Ravi&nbsp; Clinic</span>
+                                                <br>
+                                                <span style="color: rgb(132, 63, 161); font-size: 14pt;">Metro Pillar Number C1775, 18, Hitech City Rd, HUDA Techno Enclave, HITEC City, Hyd, TS-81</span>
+                                                <br>
+                                                <span style="color: rgb(132, 63, 161); font-size: 14pt;">Ph: +91 9966332214,</span>
+                                                <br>
+                                                <span style="color: rgb(132, 63, 161); font-size: 14pt;">Timings: 09:00 Am - 09:00 PM</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+            <!--
+            <tfoot>
+                <tr>
+                    <td>
+                        <div class="page-footer-space"></div>
+                    </td>
+                </tr>
+            </tfoot>
+-->
+        </table>
+    </body>
+</html>
