@@ -10,7 +10,7 @@ import galleryimg1 from "../galleryimg.svg";
 const Home = () => {
     const [carouselImages, setCarouselImages] = useState([galleryimg1, galleryimg1, galleryimg1]);
 
-    // Function to split images into chunks of 3
+   
     const chunkArray = (arr, size) => {
         const result = [];
         for (let i = 0; i < arr.length; i += size) {
@@ -21,9 +21,8 @@ const Home = () => {
 
     const carouselChunks = chunkArray(carouselImages, 3);
 
-    // Function to handle adding a new image
     const handleAddImage = () => {
-        setCarouselImages([...carouselImages, galleryimg1]); // Add a new image (galleryimg1) to the carousel
+        setCarouselImages([...carouselImages, galleryimg1]);
     };
     
     return (
